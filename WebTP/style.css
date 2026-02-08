@@ -1,0 +1,150 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.heading {
+    background-color: #ffffff;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Pushes left and right sides apart */
+    align-items: center;
+    width: 100%;
+    padding: 0 16px;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0px 7px;
+}
+
+.navlogo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+}
+
+.logo-text {
+    height: 24px;
+}
+
+.nav1, .nav2 {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0px 7px;
+}
+
+.tool-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+.icon-small {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-tiny {
+    width: 12px;
+    height: 12px;
+}
+
+.box2 ul, .nav2 ul {
+    display: flex;
+    gap: 16px;
+    list-style-type: none;
+}
+
+.box2 a, .nav2 a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.login {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+.freetrialbtn {
+    background-color: #0066ff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+.main-container{
+    align-items: center;
+}
+.headcontainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headcont {
+    height: 640px;
+    width: 720px;
+    max-width: 720px;
+    padding: 48px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /
+    align-items: center;    
+    text-align: left;   
+}
+.heading-h1{
+    font-size: 64px;
+    color: #1a1a1a;
+}
+.heading-p{
+    font-size: 22px;
+    color: #1a1a1a;
+    padding-top: 16px;
+}
+.fcs{
+    display: flex;
+    align-items: center;
+    padding-top: 32px;
+}
+.cs{
+    padding: 8px;
+}
+.cs1{
+    padding: 10px 16px;
+    border: 2px solid #0055ff;
+    border-radius: 4px;
+}
+.cs-span{
+    font-size: 16px;
+    font-weight: 700;
+}
