@@ -6,7 +6,155 @@
     <title>smallpdf</title>
     <link rel="stylesheet" href="style.css">
     
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Source Sans 3", sans-serif;
+        font-weight: 500;
+        }
+        .header-arrow{
+            display: flex;
+            padding: 0px 20px;
+        }
+        .header-arrow ol li{
+            list-style: none;
+        }
+        .header-click{
+            align-items: center;
+            justify-content: center;
+        }
+        .compress-h1{
+            font-size: 42px;
+            line-height: 56px;
+        }
+        .Box-outer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1136px;
+            height: 300px;
+            background-color: #db2e2e;
+            border-radius: 5px;
+        }
+        .Box-inner{
+            padding: 10px;
+            width: 98%;
+            height: 95%;
+            border: 1px dashed rgb(255, 255, 255);
+            border-radius: 5px;
+        }
+        body {
+            background-color: #f6f7f8;
+            color: #1a1a1a;
+        }
 
+        .compress-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Styling */
+        .tool-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tool-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .tool-header p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* Upload Box Styling from image_7837c4.png */
+        .upload-container {
+            background-color: #db2e2e;
+            border-radius: 8px;
+            padding: 60px;
+            text-align: center;
+            border: 2px dashed #e0e0e0;
+            margin-bottom: 30px;
+        }
+
+        .main-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .choose-file-btn {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            margin: 0 auto;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dropdown-arrow {
+            font-size: 12px;
+        }
+
+        .drop-text {
+            margin-top: 15px;
+            color: black;
+            font-size: 14px;
+        }
+
+        /* Info Section Styling */
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            background-color: #e3f2fd; /* Light blue background from image */
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .info-text {
+            flex: 1;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .info-features {
+            flex: 1;
+        }
+
+        .info-features ul {
+            list-style: none;
+        }
+
+        .info-features li {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Green checkmark placeholder */
+        .info-features li::before {
+            content: "✓";
+            color: #27ae60;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <div class="heading">
@@ -29,7 +177,7 @@
                     
                     <div class="box2">
                         <ul>
-                            <li><a href="compress.html">Compress</a></li>
+                            <li><a href="">Compress</a></li>
                             <li><a href="converter.html">Convert</a></li>
                             <li><a href="">Merge</a></li>
                             <li><a href="">Edit</a></li>
@@ -57,314 +205,141 @@
     </div>
 
 
-    <div class="main-container">
-        <header>
-            <div class="headcontainer">
-                <div class="headcont">
-                    <h1 class="heading-h1">We make PDF easy.</h1>
-                    <p class="heading-p">All the tools you'll need to be more productive and work smarter with documents.</p>
+    <div class="header-arrow" style="display: flex; padding: 10px 20px;">
+        <div class="header-click" style="display: flex; align-items: center;">
+            <ol style="display: flex; list-style: none; padding: 0; margin: 0; gap: 10px;"> 
+                <li style="cursor: pointer;"><a href="index.html" style="text-decoration: none;">Home</a></li>
+                <li>Compress PDF</li>
+            </ol>
+        </div>
+    </div>
 
-                    <div class="fcs">
-                        <div class="cs">
-                            <div class="cs1" style="background-color: #0055ff;">
-                                <span class="cs-span" style="color: #FFFFFF; cursor: pointer;">Start Free Trial</span>
-                            </div>
-                        </div>
-                        <div class="cs">
-                            <div class="cs1">
-                                <span class="cs-span" style="color: #0055ff; cursor: pointer;">Explore All PDF Tools</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="headcont">
-                    <img src="assets/img/headimg.svg" alt="">
-                </div>
-            </div>
-        </header>
-
-        <div class="popular">
-            <div class="header-popular">
-                <h2 class="heading-h2">Most Popular PDF Tools</h2>
-                <p class="heading-p1" style="padding-top: 18px;">30 Tools to convert, compress, and edit PDFs for free. Try it out today!</p>
+        <div class="compress-page">
+            <div class="tool-header">
+                <h1>Compress PDF</h1>
             </div>
 
-            <div>
-                <ul class="popular-grid">
-                    <li style="background-color: #fafafa;">
-                        <a href="#">
-                            <div class="tool-content">
-                                <div class="tool-icon-name">
-                                    <img src="assets/img/word.png" alt="" style="height: 32px; width: 32px;">
-                                    <h3>Merge PDF</h3>
-                                </div>
-                                <p class="popgrid-p">Convert PDFs to editable Word documents</p>
-                            </div>
-                            <span class="arrow"><img src="assets/img/next.png" alt=""></span>
-                        </a>
-                    </li>
-                    
-                    <li style="background-color: #fafafa;"> 
-                        <a href="#">
-                            <div class="tool-content">
-                                <div class="tool-icon-name">
-                                    <img src="assets/img/compare.png" alt="" style="height: 32px; width: 32px;">
-                                    <h3>Merge PDF</h3>
-                                </div>
-                                <p class="popgrid-p">Combine multiple PDFs into one unified document</p>
-                            </div>
-                            <span class="arrow"><img src="assets/img/next.png" alt=""></span>
-                        </a>
-                    </li>
-
-                    <li style="background-color: #fafafa;">
-                        <a href="#">
-                            <div class="tool-content">
-                                <div class="tool-icon-name">
-                                    <img src="assets/img/jpg-file.png" alt="" style="height: 32px; width: 32px;">
-                                    <h3>JPG to PDF</h3>
-                                </div>
-                                <p class="popgrid-p">Transform JPG, PDF, BMP, and TIFF images to PDF</p>
-                            </div>
-                            <span class="arrow"><img src="assets/img/next.png" alt=""></span>
-                        </a>
-                    </li>
-
-                    <li style="background-color: #fafafa;">
-                        <a href="#">
-                            <div class="tool-content">
-                                <div class="tool-icon-name">
-                                    <img src="assets/img/agreement.png" alt="" style="height: 32px; width: 32px;">
-                                    <h3>Sign PDF</h3>
-                                </div>
-                                <p class="popgrid-p">Create an Electronic signature and sign your documents.</p>
-                            </div>
-                            <span class="arrow"><img src="assets/img/next.png" alt=""></span>
-                        </a>
-                    </li>
-
-                    <li style="background-color: #fafafa;">
-                        <a href="#">
-                            <div class="tool-content">
-                                <div class="tool-icon-name">
-                                    <img src="assets/img/text.png" alt="" style="height: 32px; width: 32px;">
-                                    <h3>Edit PDF</h3>
-                                </div>
-                                <p class="popgrid-p">Add text, shapes, images and freehand annotation to your PDF</p>
-                            </div>
-                            <span class="arrow"><img src="assets/img/next.png" alt=""></span>
-                        </a>
-                    </li>
-
-                    <li style="background-color: #fafafa;">
-                        <a href="#">
-                            <div class="tool-content">
-                                <div class="tool-icon-name">
-                                    <img src="assets/img/compression.png" alt="" style="height: 32px; width: 32px;">
-                                    <h3>Compress PDF</h3>
-                                </div>
-                                <p class="popgrid-p">Reduce the size of you PDF without losing quality</p>
-                            </div>
-                            <span class="arrow"><img src="assets/img/next.png" alt=""></span>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-
-            <div class="popular-footer">
-                <div class="popular-footer-btn">
-                    <span style="font-weight: 700; color: white;">See all PDF Tools</span>
+            <div class="upload-container">
+                <div class="upload-box">
+                    <img src="assets/img/compress-icon.svg" alt="Compress Icon" class="main-icon">
+                    <button class="choose-file-btn">
+                        CHOOSE FILES
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <p class="drop-text">or drop files here</p>
                 </div>
             </div>
 
+            <div class="info-section">
+                <div class="info-text">
+                    <p>Compress PDFs online for quick sharing, fast uploads, and optimal storage—quality intact. The compressor is free to use and works directly in your browser.</p>
+                </div>
+                <div class="info-features">
+                    <ul>
+                        <li>PDF size reduction up to 99%</li>
+                        <li>GDPR and ISO/IEC 27001 compliant</li>
+                        <li>Fully browser-based PDF compression</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            
+        <div style="padding: 40px 0px; display: flex; align-items: center; justify-content: center;">
+            <div style="font-size: 18px;">
+                Were you looking for Shrink PDF, Reduce PDF Size, or PDF Compressor instead?
+            </div>
         </div>
 
         <div class="popular">
             <div class="header-popular">
-                <h2 class="heading-h2">Keep your Simple Tasks Simple</h2>
-                <p class="heading-p1" style="padding-top: 18px;">Smallpdf is the first and only software you'll love. We have all the tools
-                    <br>you'll need to start, manage, and finish your work with digital documents.
+                <h2 class="heading-h2">Shrink PDF Size, Preserve Quality</h2>
+                <p class="heading-p1" style="padding-top: 18px;">Compress PDFs online for free, maintaining document quality. Reduce large files for easy sharing and storage in just a few clicks.
                 </p>
             </div>
 
             <div style="display: flex;">
-                <div class="headcont">
-                    <h3 class="heading-h3">Work Directly on Your Files</h3>
-                    <p class="heading-p3">Do more than just view PDFs. Highlight and add text, images, shapes, and freehand annotations to your documents. You can connect to 30 other tools to enhance your files further.</p>
-                    <div class="fcs">
-                        <div class="cs">
-                            <div class="cs2">
-                                <span style="color: black; cursor: pointer; font-size: 16px; color: #0055ff; font-weight: 300;">Edit a PDF now</span>
-                                <img src="assets/img/arrow.png" alt="" style="width: 20px; height: 20px;">
-                            </div>
-                        </div>
-                    </div>
+                <div class="headcont" style="background-color: #f5f6f7;">
+                    <h3 class="heading-h3">Fast & Effective Compression</h3>
+                    <p class="heading-p3">Compress your PDF effortlessly and instantly. Simply drag and drop your file; our tool will automatically optimize it within seconds. Enjoy seamless online performance across all major platforms: Mac, Windows, Linux, iOS, and Android. No manual adjustments needed.</p>
+                    
                 </div>
-                <div class="headcont" style="padding: 40px 24px;">
-                    <img src="assets/img/design2.svg" alt="">
+                <div class="headcont" style="padding: 40px 24px; background-color: #f5f6f7;">
+                    <img src="assets/img/design7.svg" alt="">
                 </div>
             </div>
 
             <div style="display: flex;">
-                <div class="headcont" style="padding: 40px 24px;">
-                    <img src="assets/img/design3.svg" alt="">
+                <div class="headcont" style="padding: 40px 24px; background-color: #f5f6f7;">
+                    <img src="assets/img/design8.svg" alt="">
                 </div>
 
-                <div class="headcont">
-                    <h3 class="heading-h3">Digital Signatures Made Easy</h3>
-                    <p class="heading-p3">Fill in forms, e-sign contracts, and close deals in a few simple steps. You can also request e-signatures and track your document every step of the way.</p>
+                <div class="headcont" style="background-color: #f5f6f7;">
+                    <h3 class="heading-h3">Smaller PDFs, Same High Quality</h3>
+                    <p class="heading-p3">Select between Basic and Strong PDF compression for the optimal balance. Reduce file size without noticeable quality loss.</p>
                     
-                    <div class="fcs">
-                        <div class="cs">
-                            <div class="cs2">
-                                <span style="color: black; cursor: pointer; font-size: 16px; color: #0055ff; font-weight: 300;">Try eSign</span>
-                                <img src="assets/img/arrow.png" alt="" style="width: 20px; height: 20px;">
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
             </div>
 
             <div style="display: flex;">
-                <div class="headcont">
-                    <h3 class="heading-h3">Create the Perfect Document</h3>
-                    <p class="heading-p3">File too big? Compress it. Need a specific format? Convert it. Things getting chaotic? Merge and split files, or remove excess pages. Smallpdf has it all.</p>
-                    <div class="fcs">
-                        <div class="cs">
-                            <div class="cs2">
-                                <span style="color: black; cursor: pointer; font-size: 16px; color: #0055ff; font-weight: 300;">View all PDF tools</span>
-                                <img src="assets/img/arrow.png" alt="" style="width: 20px; height: 20px;">
-                            </div>
-                        </div>
-                    </div>
+                <div class="headcont" style="background-color: #f5f6f7;">
+                    <h3 class="heading-h3">Secure Compression, Trusted Worldwide</h3>
+                    <p class="heading-p3">Your documents are secured with TLS encryption, adhere to GDPR, and are ISO/IEC 27001 certified. For your privacy, we automatically delete files after one hour.</p>
                 </div>
-                <div class="headcont" style="padding: 40px 24px;">
-                    <img src="assets/img/design4.svg" alt="">
+                <div class="headcont" style="padding: 40px 24px; background-color: #f5f6f7;">
+                    <img src="assets/img/design10.svg" alt="">
                 </div>
             </div>
 
-            <div style="display: flex;">
-                <div class="headcont" style="padding: 40px 24px;">
-                    <img src="assets/img/design5.svg" alt="">
-                </div>
-
-                <div class="headcont">
-                    <h3 class="heading-h3">Manage Documents—All in One Place</h3>
-                    <p class="heading-p3">No more working across multiple apps! Save time by storing, managing, and sharing files across devices—straight from our web platform.</p>
-                    
-                    <div class="fcs">
-                        <div class="cs">
-                            <div class="cs2">
-                                <span style="color: black; cursor: pointer; font-size: 16px; color: #0055ff; font-weight: 300;">Start Free Trial</span>
-                                <img src="assets/img/arrow.png" alt="" style="width: 20px; height: 20px;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 
         </div>
 
-        <div class="container-ads" >
-            <div class="const1">
-
-                <div style="width: 50%; padding: 0px 80px;">
-                    <h3 class="heading-h3" style="padding: 40px 0px 16px 0px; font-size: 42px;">Get It on Mobile</h3>
-                    <p class="heading-p3">Create PDF scans, organize documents, and share files from all your connected devices with the Smallpdf Mobile App—wherever you are.</p>
-                    
-                    <div class="fcs">
-                        <div class="cs">
-                            <div>
-                                <img src="assets/img/playstore.png" alt="" style="width: 140px; height: 40px;">
-                            </div>
-                        </div>
-                        <div class="cs">
-                            <div>
-                                <img src="assets/img/Screenshot 2026-02-09 135641.png" alt="" style="width: 140px; height: 40px;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="width: 50%;">
-                    <img src="assets/img/design6.svg" alt="">
-                </div>
-
-            </div>
-        </div>
 
 
-        <div class="container-ads">
-            <div class="const2"> 
+        
 
-                <div style="width: 45%; padding: 0px 50px;">
-                    <h3 class="heading-h3" style="padding: 40px 0px 16px 0px; font-size: 42px;">Get It on Mobile</h3>
-                    <p class="heading-p3" style="padding-bottom: 32px;">Get unlimited access to Smallpdf tools for you and your team with pricing that’s right for you.</p>
-                    
-                    <div>
-                            <div>
-                                <span class="cs-span" style="color: #FFFFFF; cursor: pointer; background-color: #0055ff; padding: 16px; font-size: 16px; border-radius: 4px;">Compare Plans</span>
-                            </div>
-                    </div>
-                    
-                </div>
 
-                <div style="display: flex; align-items: center;">
-                    <div class="subs">
-                        <img src="assets/img/Screenshot 2026-02-09 211727.png" alt="" style="height: 200px; width:312px;">
-                    </div>
-                    <div class="subs">
-                        <img src="assets/img/Screenshot 2026-02-09 211739.png" alt="" style="height: 200px; width:312px;">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        </div>
 
         <div class="popular">
             <div class="header-popular">
-                <h2 class="heading-h2">Why Choose Smallpdf?</h2>
+                <h2 class="heading-h2">Everything You Need in a PDF Compressor</h2>
             </div>
 
             <div class="box-grid">
 
                 <div class="boxes">
-                    <div style="display:flex; align-items: left;"><img src="assets/img/peopletrustus.svg" alt=""></div>
-                    <h3 style="padding: 24px 0px 8px 0px;">People Trust Us</h3>
+                    <div style="display:flex; align-items: left;"><img src="assets/img/emo1.svg" alt="" style="width: 80px; height: 80px;"></div>
+                    <h3 style="padding: 24px 0px 8px 0px; font-weight:700;font-size: 22px;">Start Immediately—No Fuss</h3>
                     <p>Over a billion users have used our service to simplify their work with digital documents.</p>
                 </div>
                 <div class="boxes">
-                    <div style="display:flex; align-items: left;"><img src="assets/img/businessestrustus.svg" alt="" style="width: 80px; height: 80px;"></div>
-                    <h3 style="padding: 24px 0px 8px 0px;">Businesses Trust Us</h3>
-                    <p>We’re one of the highest-rated PDF software on major B2B software listing platforms: Capterra, G2, and TrustPilot.</p>
+                    <div style="display:flex; align-items: left;"><img src="assets/img/emo2.svg" alt="" style="width: 80px; height: 80px;"></div>
+                    <h3 style="padding: 24px 0px 8px 0px; font-weight:700;font-size: 22px;">Compress Files on Any Device</h3>
+                    <p>WWe’re cloud-based, so you can reduce your file size online via any browser and on any device, from desktop to tablet and mobile.</p>
                 </div>
                 <div class="boxes">
-                    <div style="display:flex; align-items: left;"><img src="assets/img/ourpartnertrustus.svg" alt="" style="width: 80px; height: 80px;"></div>
-                    <h3 style="padding: 24px 0px 8px 0px;">Our Partners Trust Us</h3>
-                    <p>Unlock bonus features with the Smallpdf Chrome Extension, Google Workspace, and Dropbox App—all free to use.</p>
+                    <div style="display:flex; align-items: left;"><img src="assets/img/emo3.svg" alt="" style="width: 80px; height: 80px;"></div>
+                    <h3 style="padding: 24px 0px 8px 0px; font-weight:700;font-size: 22px;">Compress PDFs & Other File Formats</h3>
+                    <p>Compress more than just PDFs. Use the tool to reduce other file types, such as Word, PPT, Excel, JPG, PNG, GIF, and TIFF.</p>
                 </div>
             </div>
             <div class="box-grid">
 
                 <div class="boxes">
-                    <div style="display:flex; align-items: left;"><img src="assets/img/247.svg" alt="" style="width: 80px; height: 80px;"></div>
-                    <h3 style="padding: 24px 0px 8px 0px;">People Trust Us</h3>
-                    <p>Over a billion users have used our service to simplify their work with digital documents.</p>
+                    <div style="display:flex; align-items: left;"><img src="assets/img/emo4.svg" alt="" style="width: 80px; height: 80px;"></div>
+                    <h3 style="padding: 24px 0px 8px 0px; font-weight:700;font-size: 22px;">GDPR Compliance</h3>
+                    <p>Smallpdf is GDPR compliant, which means we’re transparent about how we store, collect, and process your personal data.</p>
                 </div>
                 <div class="boxes">
-                    <div style="display:flex; align-items: left;"><img src="assets/img/256.svg" alt="" style="width: 80px; height: 80px;"></div>
-                    <h3 style="padding: 24px 0px 8px 0px;">Businesses Trust Us</h3>
-                    <p>We’re one of the highest-rated PDF software on major B2B software listing platforms: Capterra, G2, and TrustPilot.</p>
+                    <div style="display:flex; align-items: left;"><img src="assets/img/emo5.svg" alt="" style="width: 80px; height: 80px;"></div>
+                    <h3 style="padding: 24px 0px 8px 0px; font-weight:700;font-size: 22px;">ISO/IEC 27001 Certified Security</h3>
+                    <p>We’re ISO/IEC 27001 certified, so we’re audited annually to ensure the safety, security, and integrity of your information.</p>
                 </div>
                 <div class="boxes">
-                    <div style="display:flex; align-items: left;"><img src="assets/img/security.png" alt="" style="width: 80px; height: 80px;"></div>
-                    <h3 style="padding: 24px 0px 8px 0px;">Our Partners Trust Us</h3>
-                    <p>Unlock bonus features with the Smallpdf Chrome Extension, Google Workspace, and Dropbox App—all free to use.</p>
+                    <div style="display:flex; align-items: left;"><img src="assets/img/emo6.svg" alt="" style="width: 80px; height: 80px;"></div>
+                    <h3 style="padding: 24px 0px 8px 0px; font-weight:700;font-size: 22px;">File Transfer Encryption</h3>
+                    <p>We keep your documents secure, even while you’re working on them, with state-of-the-art TLS encryption technology.</p>
                 </div>
             </div>
         </div>
@@ -373,13 +348,13 @@
             <div class="const2" style="background-image: url(assets/img/bg.svg); background-repeat: no-repeat; background-size: auto; height: 360px;">
             <div>
                 <div>
-                    <h1 class="heading-h1">We make PDF easy.</h1>
-                    <p class="heading-p">All the tools you'll need to be more productive and work smarter with documents.</p>
+                    <h1 class="heading-h1">Document Work Made Easy</h1>
+                    <p style="font-size: 18px; max-width: 600px; padding-left: 10px;">Boost productivity in your business with unlimited access to all Smallpdf’s tools for taking the hassle out of document work. Do more, better, faster.</p>
 
                     <div class="fcs">
                         <div class="cs">
                             <div class="cs1" style="background-color: #0055ff;">
-                                <span class="cs-span" style="color: #FFFFFF; cursor: pointer;">Start Free Trial</span>
+                                <span class="cs-span" style="color: #FFFFFF; cursor: pointer;">Compare Plans</span>
                             </div>
                         </div>
                     </div>

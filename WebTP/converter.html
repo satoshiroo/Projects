@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="style2.css">
+<title>PDF Converter</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+     body {
+        margin: 0;
+        background: #ffffff;
+        color: #222;
+    }
+
+    
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 32px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .logo {
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .nav-links a {
+        margin-right: 18px;
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+    }
+    .nav-right a {
+        margin-right: 16px;
+        text-decoration: none;
+        font-size: 14px;
+        color: #413e3e;
+    }
+
+    .btn-trial {
+        background: #0057ff;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    
+    .container {
+        max-width: 1100px;
+        padding: 0 24px;
+    }
+
+    .breadcrumb {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 24px;
+    }
+    h1 {
+        text-align: center;
+        font-size: 42px;
+        margin-bottom: 32px;
+    }
+
+    
+    .upload-box {
+        background: #e53935;
+        border-radius: 12px;
+        padding: 48px 24px;
+        border: 2px dashed rgba(255,255,255,0.6);
+        text-align: center;
+        color: white;
+    }
+
+    .upload-icon {
+        font-size: 48px;
+        margin-bottom: 24px;
+    }
+    .upload-button {
+        display: inline-flex;
+        align-items: center;
+        background: white;
+        color: #222;
+        padding: 14px 18px;
+        border-radius: 8px;
+        font-weight: 600;
+        gap: 12px;
+        cursor: pointer;
+    }
+
+    .caret {
+        border-left: 1px solid #ddd;
+        padding-left: 12px;
+        font-size: 12px;
+    }
+
+    .drop-text {
+        margin-top: 16px;
+        font-size: 14px;
+        opacity: 0.9;
+    }
+
+    
+    .info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        gap: 40px;
+    }
+.info-left {
+        max-width: 55%;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #444;
+    }
+
+    .info-right {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .info-right li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+        font-size: 15px;
+    }
+
+    .check {
+        width: 18px;
+        height: 18px;
+        background: #00c853;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: bold;
+    }
+ @media (max-width: 900px) {
+        .info {
+            flex-direction: column;
+        }
+
+        .info-left {
+            max-width: 100%;
+        }
+    }
+
+
+
+.features-section {
+    background: #fff;
+    padding: 120px 0;
+}
+
+.features-grid {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 56px;
+    row-gap: 72px;
+}
+
+.feature-item {
+    text-align: center;
+}
+
+.feature-item .icon {
+    font-size: 34px;
+    line-height: 1;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.feature-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 2.4;
+    margin-bottom: 14px;
+    color: #111;
+}
+
+.feature-item p {
+    max-width: 340px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #4a4a4a;
+}
+
+.feature-item a {
+    color: #0057ff;
+    text-decoration: none;
+}
+
+.feature-item a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        row-gap: 56px;
+    }
+
+    .features-section {
+        padding: 72px 0;
+    }
+}
+
+/* ---------- HOW TO CONVERT ---------- */
+.how-to-section {
+    background: #fff;
+    padding: 96px 0 72px;
+}
+
+.how-to-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 80px;
+}
+
+
+.how-to-visual {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.file {
+    width: 72px;
+    height: 88px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 22px;
+    color: #fff;
+}
+
+.file.pdf {
+    background: #e53935;
+}
+
+.file.word {
+    background: #2b579a;
+}
+
+.file.ppt {
+    background: #d24726;
+}
+
+.file.excel {
+    background: #217346;
+}
+
+.arrow {
+    font-size: 28px;
+    color: #999;
+}
+
+
+.how-to-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #111;
+
+}
+
+.how-to-content ol {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.how-to-content li {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+
+.faq-heading {
+    padding: 80px 0 0;
+    text-align: center;
+}
+
+.faq-heading h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111;
+}
+
+
+@media (max-width: 900px) {
+    .how-to-container {
+        grid-template-columns: 1fr;
+        row-gap: 48px;
+    }
+
+    .how-to-visual {
+        justify-content: center;
+    }
+
+    .how-to-content {
+        text-align: center;
+    }
+
+    .how-to-content ol {
+        text-align: left;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+.faq-item {
+            margin-bottom: 70px;
+            width: 600px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: #000;max-width: 1180px;
+             
+
+        
+
+        }
+        p {
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+        grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f6f6;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 18px;
+}
+
+.category {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.card h3 {
+  margin: 5px 0 10px;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+}
+
+
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.card {
+  background: transparent;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.category {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #777;
+  letter-spacing: 0.5px;
+}
+
+.card h3 {
+  margin: 8px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+.main-cont{
+    width: 1136px;
+}
+
+
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="heading">
+        <div class="nav-container">
+            
+            <div class="nav-left">
+                <div class="navlogo">
+                    <img src="assets/img/smallpdf-logo.svg" alt="Logo" class="logo-icon">
+                    <img src="assets/img/smallpdf-white-large.svg" alt="Smallpdf" class="logo-text">
+                </div>
+
+                <div class="nav1">
+                    <div class="tool-menu">
+                        <img src="assets/img/grid-1526-svgrepo-com.svg" alt="Tools Icon" class="icon-small">
+                        <span>Tools</span>
+                        <img src="assets/img/drop-down-svgrepo-com.svg" alt="Dropdown" class="icon-tiny">
+                    </div>
+                    
+                    <div class="box2">
+                        <ul>
+                            <li><a href="">Compress</a></li>
+                            <li><a href="converter.html">Convert</a></li>
+                            <li><a href="">Merge</a></li>
+                            <li><a href="">Edit</a></li>
+                            <li><a href="">Sign</a></li>
+                            <li><a href="">AI PDF</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <div class="nav2">
+                    <ul>
+                        <li><a href="">Pricing</a></li>
+                        <li><a href="">Teams</a></li>
+                    </ul>
+                </div>
+                <div class="login">Log In</div>
+                <div class="freetrialbtn">
+                    <span>Free Trial</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div class="breadcrumb">Home &nbsp;›&nbsp; PDF Converter</div>
+
+    <div style="display: flex; align-items: center; justify-content: center;">
+
+        <div class="main-cont" style="padding: 0px 40px;">
+            <h1>PDF Converter</h1>
+
+            <div class="upload-box">
+                <div class="upload-icon">📄</div>
+
+                <div class="upload-button">
+                    CHOOSE FILES
+                    <span class="caret">▼</span>
+                </div>
+
+                <div class="drop-text">or drop files here</div>
+            </div>
+        </div>
+    </div>
+
+    <div >
+            <div >
+                Transform any file into a high-quality PDF or convert PDFs to Word, Excel,
+                PowerPoint, images, and other formats. Experience lightning-fast conversions
+                without the need for downloads or sign-ups.
+            </div>
+
+            <ul class="info-right">
+                <li><span class="check">✓</span> Trusted by 1.7 billion users worldwide</li>
+                <li><span class="check">✓</span> Works with Word, Excel, PowerPoint, and images</li>
+                <li><span class="check">✓</span> Convert PDFs on any device: Mac, Windows, iOS, and Android</li>
+            </ul>
+        </div>
+          
+       <!-----------------------sa gitna-------------------------------------> 
+    <div class="features-grid">
+
+        <div class="feature-item">
+            <div class="icon">💡</div>
+            <h3>How Does the Online PDF Converter Work?</h3>
+            <p>
+                The PDF conversion process makes file handling simple. Drag & drop almost
+                any file format—like Microsoft Word documents, Excel, PPT, or image files—
+                into the tool to create a PDF. You can also convert a PDF back into these
+                formats. Once the file is ready, download it instantly.
+            </p>
+        </div>
+
+        <div class="feature-item">
+            <div class="icon">🎖</div>
+            <h3>Security & Privacy</h3>
+            <p>
+                We are serious about your security and privacy. All file transfers are
+                protected through advanced TLS encryption. For added peace of mind, all
+                files are automatically deleted from our servers after one hour.
+            </p>
+        </div>
+
+        <div class="feature-item">
+            <div class="icon">👍</div>
+            <h3>Convert on Windows, Linux, Mac, Android, And More</h3>
+            <p>
+                Convert PDF files online in the cloud—no software download required.
+                Use the tool on all devices and operating systems with a web browser,
+                then download your converted files instantly.
+            </p>
+        </div>
+
+        <div class="feature-item">
+            <div class="icon">🔒</div>
+            <h3>Top-Quality Conversion</h3>
+            <p>
+                Our PDF Converter ensures high-quality results when working with the PDF
+                format, made possible through our partnership with
+                <a href="#">Solid Documents</a>. Supports DOC, DOCX, PPT, PPTX, XLS, XLSX,
+                JPG, PNG, and more.
+            </p>
+        </div>
+
+        <div class="feature-item">
+            <div class="icon">🛠</div>
+            <h3>Quick & Easy Conversion</h3>
+            <p>
+                Smallpdf’s free online PDF converter makes handling files quick and simple.
+                Drag & drop, choose the output format, and let the tool work its magic.
+                Enjoy watermark-free conversions in just a few clicks.
+            </p>
+        </div>
+
+        <div class="feature-item">
+            <div class="icon">☁</div>
+
+            <h3>Access From Anywhere</h3>
+            <p>
+                Convert files anytime, anywhere with internet access. No downloads or
+                sign-ups required—perfect for fast file conversions on the go.
+            </p>
+        </div>
+
+    </div>
+</section>
+<!----------------------------------sa medyo gitna----------------->
+
+<section class="how-to-section">
+    <div class="how-to-container">
+
+        
+        <div class="how-to-visual">
+            <div class="file pdf">PDF</div>
+            <div class="arrow">→</div>
+            <div class="file word">W</div>
+            <div class="file ppt">P</div>
+            <div class="file excel">X</div>
+        </div>
+
+        
+        <div class="how-to-content">
+            
+            <div>
+</h2>2>How To Convert a PDF File Online for Free</h2>
+
+            </div>
+            <ol>
+                <li>Import or drag &amp; drop your PDF file into our converter.</li>
+                <li>Choose the target format: PDF, Word, Excel, PowerPoint, or image.</li>
+                <li>Apply OCR or extract images if needed (available in Pro).</li>
+                <li>Click “Convert” to transform your file format.</li>
+                <li>Download your converted document—simple as that!</li>
+            </ol>
+        </div>
+
+    </div>
+</section>
+
+
+    <p>
+        <section class="faq-heading">
+    <h2>Convert PDF FAQs</h2>
+    </p>
+</section>
+
+<div class="faq-item">
+
+        <h2>What file formats can I convert to and from PDF?</h2>
+        <p>Drag and drop your file into the box above to check if it's supported. We support Word, Excel, PowerPoint, JPG, PNG, TIFF, and many more file types.</p>
+        <hr>
+    </div>
+
+    <div class="faq-item">
+        <h2>How does the online PDF converter work?</h2>
+        <p>Transform almost any file format, including Microsoft Word documents, Excel, PowerPoint, and image files, into a PDF. Simply drag and drop your file into the tool, wait a moment, select your desired output format, and download your new document. You can also convert a PDF back into these formats.</p>
+        <hr>
+    </div>
+
+    <div class="faq-item">
+        <h2>Can I convert scanned PDFs into editable documents?</h2>
+        <p>Yes. Our OCR technology allows you to search and edit text within converted and scanned PDFs by extracting the text. This feature is available for Pro account users.</p>
+        <hr>
+        <section>
+
+  <h2>How do I convert a PDF on Mac, Windows, or a mobile device?</h2>
+  <p>
+    Convert PDFs effortlessly with Smallpdf's online converter. Upload your file from any device or browser—no installation required. Alternatively, try the free Smallpdf mobile app for iOS and Android.
+  </p>
+</section>
+
+<hr>
+
+<section>
+  <h2>Is my data safe when using the PDF Converter?</h2>
+  <p>
+    Absolutely. Your files are secured with TLS encryption during transfer and automatically deleted after one hour.
+  </p>
+
+  <hr>
+
+    <section>
+    <h2>Is Smallpdf a free PDF converter?</h2>
+        <p>
+            Yes. Convert any document type for free with a basic account. For unlimited conversions and access to over 30 PDF tools, upgrade to Pro and start your 7-day free trial. You can cancel at any point during the trial.
+        </p>
+    </section>
+</section>
+
+<body>
+    
+    <h1>PDF Converter Blog Articles</h1>
+
+<div class="grid">
+
+  <div class="card">
+    <img src="image1.jpg">
+    <div class="card-content">
+      <div class="category">HOW TO CONVERT PDF DOCUMENTS</div>
+      <h3>How To Save a Google Doc as a PDF</h3>
+      <p>Here are two ways to save any Google Doc to PDF format.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image2.jpg">
+    <div class="card-content">
+      <div class="category">HOW TO CONVERT PDF DOCUMENTS</div>
+      <h3>Convert Excel to Word Online</h3>
+      <p>This quick guide walks you through converting Excel files to Word easily.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image3.jpg">
+    <div class="card-content">
+      <div class="category">HOW TO CONVERT PDF DOCUMENTS</div>
+      <h3>Free Online JPG to PPT Converter</h3>
+      <p>Convert JPG to PPT instantly — no installs, no signups required.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image4.jpg">
+    <div class="card-content">
+      <div class="category">HOW TO CONVERT PDF DOCUMENTS</div>
+      <h3>How To Save PDF on iPad</h3>
+      <p>Learn multiple ways to save PDFs and files on your iPad.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image5.jpg">
+    <div class="card-content">
+      <div class="category">HOW TO CONVERT PDF DOCUMENTS</div>
+      <h3>Online2PDF — Convert Files to PDF</h3>
+      <p>Export Word, PPT, Excel, or images to PDF online for free.</p>
+    </div>
+  </div>
+<!----------------------- walang image kasi walang image-->
+  <div class="card">
+    <img src="image6.jpg">
+    <div class="card-content">
+      <div class="category">HOW TO CONVERT PDF DOCUMENTS</div>
+      <h3>How To Save a Webpage as a PDF</h3>
+      <p>Quickly convert any webpage to PDF on browser or mobile.</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</section>
+    </div>
+
+
+
+
+
+
+</body>
+</html>
